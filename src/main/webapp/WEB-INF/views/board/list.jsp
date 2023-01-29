@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 
 <div class="container">
 	<h2>스프링 MVC 게시판 실습</h2>
@@ -21,7 +22,7 @@
 							<td><a href="/board/boardDetailForm.do?idx=${item.idx}">${item.title}</a></td>
 							<td>${item.content}</td>
 							<td>${item.writer}</td>
-							<td>${item.inDate}</td>
+							<td>${fn:split(item.inDate," ")[0]}</td>
 							<td>${item.hit}</td>
 						</tr>
 					</c:forEach>

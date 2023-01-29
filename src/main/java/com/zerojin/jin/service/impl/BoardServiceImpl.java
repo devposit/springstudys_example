@@ -30,4 +30,21 @@ public class BoardServiceImpl implements BoardService {
 		int result = boardMapper.setWrite(vo);
 		return result;
 	}
+	
+	@Override
+	public int boardDelete(int idx) {
+		int result = boardMapper.setDelete(idx);
+		return result;
+	}
+	
+	@Override
+	public int boardUpdate(BoardVO vo) {
+		int result = boardMapper.setUpdate(vo);
+		return result;
+	}
+	
+	@Override
+	public void boardCount(int idx) {
+		boardMapper.setCnt(idx);
+	}
 }

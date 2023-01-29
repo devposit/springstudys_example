@@ -20,4 +20,31 @@
 			#{title},#{content},#{writer}
 		)
 	</insert>
+	
+	<update id="setUpdate" parameterType="com.zerojin.jin.domain.BoardVO">
+		update myboard
+		set
+			title = #{title},
+			content = #{content},
+			writer = #{writer},
+			inDate = now()
+		where
+			idx = #{idx}
+	</update>
+	
+	<update id="setCnt" parameterType="int">
+		update myboard
+		set
+			hit = hit+1
+		where
+			idx = #{idx}
+	</update>
+	
+	<delete id="setDelete" parameterType="int">
+		delete 
+		from 
+			myboard 
+		where 
+			idx= #{idx}	
+	</delete>
 </mapper>
